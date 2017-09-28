@@ -1,4 +1,4 @@
-import Kantin.Kantin
+import Kantin.Entity.Kantin
 
 class Main {
     public static void main(String[] args) {
@@ -7,22 +7,34 @@ class Main {
             nama "Nasi Goreng"
             bahan "Telor" harga 1000 kuantitas 200
             bahan "Nasi" harga 3000 kuantitas 200
-            produk "Nasi Goreng" harga 20000 dari "Nasi", 1 dari "Telor", 2 dari "Kecap", 1
-            meja 0
+
+            produk "Nasi Goreng" harga 20000 dari "Nasi", 1 dari "Telor", 2
+
             meja 1
+            meja 2
+            meja 3
+            meja 4
         }
 
-//        kantin.update {
-//            pelanggan "A" duduk 0
-//            pelanggan "A" pesan "Selo Jamur", 2
-//            pesanan "A", "Selo Jamur" mulai dimasak
-//            pesanan "A", "Selo Jamur" selesai dimasak
-//            pelanggan "A" pergi
-//
-//            //------------------
-//            bahan "Telur" ditambah 2
-//        }
+        println("\n\n\nEpoch 1 Result\n")
+        println(kantin)
 
+        kantin.update {
+            pelanggan "A" duduk 1
+            pelanggan "A" pesan "Nasi Goreng", 20
+            pesanan "A", "Nasi Goreng" dimasak
+            pesanan "A", "Nasi Goreng" selesai
+        }
+
+        println("\n\n\nEpoch 2 Result\n")
+        println(kantin)
+
+        kantin.update {
+            pelanggan "A" pergi
+            bahan "Telor" ditambah 2
+        }
+
+        println("\n\n\nEpoch 3 Result\n")
         println(kantin)
     }
 

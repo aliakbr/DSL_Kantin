@@ -2,5 +2,8 @@ package Kantin.Entity
 
 class Meja {
     Integer id;
-    Boolean available = true;
+    Pelanggan pelanggan = null;
+    Boolean available () {
+        return pelanggan == null;
+    }
 }
