@@ -53,4 +53,16 @@ class Pesanan {
 
         return this
     }
+
+    @Override
+    String toString() {
+        StringBuilder stringBuilder = new StringBuilder()
+        stringBuilder.append("Pesanan dari pelanggan " + this.pelanggan.nama + " produk: "+ this.produk.name
+                +  " kuantitas: " + this.kuantitas + " buah\n")
+        stringBuilder.append("harga satuan: Rp " + this.produk.price + " total: Rp " + this.produk.price * this.kuantitas)
+        stringBuilder.append(" jenis: " + this.jenis + " status: " + this.status)
+
+
+        return stringBuilder.toString()
+    }
 }

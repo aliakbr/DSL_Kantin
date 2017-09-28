@@ -85,27 +85,60 @@ class Kantin {
     String toString() {
         StringBuilder stringBuilder = new StringBuilder()
         stringBuilder.append("Bahan:\n")
-        for (def b : bahanMap.values()) {
-            stringBuilder.append(b.name + " harga: "+ b.price +  " kuantitas: " + b.quantity + " buah")
-            stringBuilder.append("\n")
-        }
-
-        stringBuilder.append("Produk:\n")
-        for (def p: produkMap.values()){
-            stringBuilder.append(p.name + " harga: "+ p.price)
-            stringBuilder.append("\n")
-            stringBuilder.append("Bahan:\n")
-            for (def resource: p.resource_req){
-                stringBuilder.append(resource.key.name + " kuantitas: " + resource.value + " buah")
+        if (bahanMap.size() > 0) {
+            for (def b : bahanMap.values()) {
+                stringBuilder.append(b.toString())
                 stringBuilder.append("\n")
             }
+        } else {
+            stringBuilder.append("tidak ada bahan yang terdaftar.\n")
+        }
+        stringBuilder.append("\n")
+
+        stringBuilder.append("Produk:\n")
+        if (produkMap.size() > 0) {
+            for (def p: produkMap.values()){
+                stringBuilder.append(p.toString())
+                stringBuilder.append("\n")
+            }
+        } else {
+            stringBuilder.append("tidak ada produk yang terdaftar.\n")
         }
 
         stringBuilder.append("Meja:\n")
-        for (def m : mejaMap.values()) {
-            stringBuilder.append(m.id + " available: "+ m.available())
-            stringBuilder.append("\n")
+        if (mejaMap.size() > 0) {
+            for (def m : mejaMap.values()) {
+                stringBuilder.append(m.toString())
+                stringBuilder.append("\n")
+            }
+        } else {
+            stringBuilder.append("tidak ada meja yang terdaftar.\n")
         }
+        stringBuilder.append("\n")
+
+        stringBuilder.append("Pelanggan:\n")
+        if (pelangganMap.size() > 0) {
+            for (def p : pelangganMap.values()) {
+                stringBuilder.append(p.toString())
+                stringBuilder.append("\n")
+            }
+        } else {
+            stringBuilder.append("tidak ada pelanggan yang terdaftar.\n")
+        }
+        stringBuilder.append("\n")
+
+        stringBuilder.append("Pesanan:\n")
+        if (pesananList.size() > 0) {
+            int i = 1
+            for (def p : pesananList) {
+                stringBuilder.append("Pesanan " + i++ + "\n")
+                stringBuilder.append(p.toString())
+                stringBuilder.append("\n\n")
+            }
+        } else {
+            stringBuilder.append("tidak ada pesanan yang terdaftar.\n")
+        }
+        stringBuilder.append("\n")
 
         return stringBuilder.toString()
     }

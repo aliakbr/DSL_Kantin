@@ -34,4 +34,12 @@ class Bahan {
     int hashCode() {
         return name.hashCode()
     }
+
+    @Override
+    String toString() {
+        StringBuilder stringBuilder = new StringBuilder()
+        stringBuilder.append("Bahan " + this.name + " harga: "+ this.price +  " kuantitas: " + this.quantity + " buah")
+
+        return stringBuilder.toString()
+    }
 }

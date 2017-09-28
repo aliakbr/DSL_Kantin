@@ -20,5 +20,17 @@ class Produk {
         return this
     }
 
+    @Override
+    String toString() {
+        StringBuilder stringBuilder = new StringBuilder()
+        stringBuilder.append(this.name + " harga: "+ this.price)
+        stringBuilder.append("\n")
+        stringBuilder.append("Bahan produk:\n")
+        for (def resource: this.resource_req){
+            stringBuilder.append(resource.key.name + " kuantitas: " + resource.value + " buah")
+            stringBuilder.append("\n")
+        }
 
+        return stringBuilder.toString()
+    }
 }
