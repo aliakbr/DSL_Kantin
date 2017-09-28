@@ -7,7 +7,7 @@ class Main {
             nama = "Nasi Goreng"
             bahan "Telor" harga 1000 kuantitas 200
             bahan "Nasi" harga 3000 kuantitas 200
-            produk "Nasi Goreng" harga 20000 dari "Nasi", 1 dan "Telor", 2 dan "Kecap", 1
+            produk "Nasi Goreng" harga 20000 dari "Nasi", 1 dari "Telor", 2 dari "Kecap", 1
             meja 0
             meja 1
         }

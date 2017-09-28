@@ -1,8 +1,5 @@
 package Kantin
 
-import Kantin.Entity.Bahan
-import Kantin.Entity.BahanDasar
-
 class Kantin {
     private Map<String, BahanDasar> bahanMap = new HashMap<>();
 
