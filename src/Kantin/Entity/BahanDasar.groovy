@@ -4,5 +4,13 @@ class BahanDasar {
     String nama;
     Integer kuantitas;
     BigInteger harga_per_satuan;
-    Boolean kondisi;
+
+    public static BahanDasar make (closure) {
+        def dasar = new BahanDasar()
+
+        closure.delegate = dasar
+        closure()
+        return dasar
+    }
+
 }
