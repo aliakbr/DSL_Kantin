@@ -6,7 +6,20 @@
 - 13514080 Ali Akbar
 - 13514086 Azka Hanif Imtiyaz
 
+## Batasan Domain Kantin
+
+Batasan domain kantin pada DSL ini adalah sebagai berikut:
+
+- Interaksi jual beli makanan.
+- Pencatatan bahan baku.
+- Alur hingga pelanggan mendapatkan makanan.
+- Pencatatan tempat makan.
+- Pencatatan pesanan *take away* atau *dine in*.
+- Pencatatan pelanggan meninggalkan tempat makan.
+
 ## Cara Menggunakan
+
+Untuk menggunakan DSL ini, gunakan distribusi Groovy dan Java yang telah diatur. 
 
 Gunakan *static method* `Kantin.make` untuk membuat obyek kantin
 dan mendefinisikan kondisi awal kantin. 
@@ -15,7 +28,7 @@ untuk melakukan perubahan kepada *state* kantin.
 
 DSL yang dapat digunakan adalah sebagai berikut:
 
-    nama <string>
+    nama <nama>
 
 Mendefinisikan nama kantin.
 
@@ -50,7 +63,7 @@ Mencatat pesanan suatu pelanggan mulai dimasak. Stok bahan dikurangi pada saat i
     
     pesanan <nama pelanggan>, <nama produk> selesai
     
-Mencatat pesanan suatu pelanggan selesai dimasak.
+Mencatat pesanan suatu pelanggan selesai dimasak dan diserahkan ke pelanggan.
     
     bahan <bahan> ditambah <jumlah>
     
@@ -58,7 +71,7 @@ Mencatat penambahan stok bahan.
 
 ## Keluaran
 
-Kondisi kantin dapat didapatkan dengan memanggil `toString`. Berikut contoh kondisi kantin:
+*State* kantin dapat didapatkan dengan memanggil `toString`. Berikut contoh kondisi kantin:
 
     Bahan:
     Bahan Telor harga: 1000 kuantitas: 173 buah
