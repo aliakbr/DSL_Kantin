@@ -19,12 +19,12 @@ Batasan domain kantin pada DSL ini adalah sebagai berikut:
 
 ## Cara Menggunakan
 
-Untuk menggunakan DSL ini, gunakan distribusi Groovy dan Java yang telah diatur. 
-
 Gunakan *static method* `Kantin.make` untuk membuat obyek kantin
 dan mendefinisikan kondisi awal kantin. 
 Kemudian, gunakan *method* `kantin.update` 
 untuk melakukan perubahan kepada *state* kantin.
+
+Contoh penggunaan dapat dilihat di file `Main.groovy`.
 
 DSL yang dapat digunakan adalah sebagai berikut:
 
